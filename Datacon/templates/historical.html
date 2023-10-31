@@ -86,6 +86,8 @@
             <tr>
                 <th>Timestamp</th>
                 <th>Temperature</th>
+                <th>Humidity %</th>
+                <th>Pressure</th>
                 <!-- Voeg hier eventuele andere kolomkoppen toe -->
             </tr>
         </thead>
@@ -94,6 +96,8 @@
                 <tr>
                     <td>{{ data[3] }}</td>
                     <td>{{ data[0] }}</td>
+                    <td>{{ data[1] }}</td>
+                    <td>{{ data[2] }}</td>
                     <!-- Voeg hier eventuele andere kolomgegevens toe -->
                 </tr>
             {% endfor %}
