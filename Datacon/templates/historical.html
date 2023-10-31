@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Data</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height:100vh;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative; /* Voeg deze regel toe */
+        }
+        .navbar h1 {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar .btn {
+            position: absolute; /* Voeg deze regel toe */
+            top: 0px; /* Aanpassing aan de gewenste verticale positie */
+            right: 0px; /* Aanpassing aan de gewenste horizontale positie */
+            background-color: #333;
+            color: white;
+            padding: 19px 20px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+        }
+        .navbar .btn:hover {
+            background-color: #101110;
+        }
+        @media (max-width: 600px) {
+            .navbar .btn {
+                font-size:10px;
+                position:relative;
+                padding: 10px;
+            }
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .footer {
+
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Historical Data</h1>
+        <a class="btn" href="/">Real-time Information</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Temperature</th>
+                <!-- Voeg hier eventuele andere kolomkoppen toe -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in historical_data %}
+                <tr>
+                    <td>{{ data[3] }}</td>
+                    <td>{{ data[0] }}</td>
+                    <!-- Voeg hier eventuele andere kolomgegevens toe -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="footer">
+        &copy; 2023 Greenhouse project
+    </div>
+</body>
+</html>
